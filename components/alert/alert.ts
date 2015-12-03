@@ -43,7 +43,9 @@ export class Alert implements OnInit {
   constructor(public el:ElementRef) {
     this.closeable = this.closeable || el.nativeElement.getAttribute('(close)');
   }
-
+  ngOnInit() {
+      this.onInit();
+  }
   onInit() {
     this.type = this.type || 'warning';
     this.classes[0] = 'alert-' + (this.type || 'warning');

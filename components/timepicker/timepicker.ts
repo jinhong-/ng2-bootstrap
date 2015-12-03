@@ -157,6 +157,10 @@ export class Timepicker implements ControlValueAccessor, OnInit {
     cd.valueAccessor = this;
   }
 
+  ngOnInit() {
+      this.onInit();
+  }
+
   // todo: add formatter value to Date object
   onInit() {
     // todo: take in account $locale.DATETIME_FORMATS.AMPMS;

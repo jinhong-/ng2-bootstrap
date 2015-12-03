@@ -311,6 +311,10 @@ export class Typeahead implements OnInit {
     }
   }
 
+  ngOnInit() {
+      this.onInit();
+  }
+  
   onInit() {
     this.optionsLimit = this.optionsLimit || 20;
     this.minLength = this.minLength || 1;

@@ -58,7 +58,9 @@ export class Carousel implements OnDestroy {
   private destroyed:boolean = false;
   private currentSlide:Slide;
   private _interval:number;
-
+  ngOnDestroy() {
+      this.onDestroy();
+  }
   onDestroy() {
     this.destroyed = true;
   }
@@ -225,12 +227,15 @@ export class Slide implements OnInit, OnDestroy {
 
   constructor(private carousel:Carousel) {
   }
-
+  ngOnInit() {
+      this.onInit();
+  }
   onInit() {
     this.carousel.addSlide(this);
   }
-
-  onDestroy() {
+  ngOnDestroy() {
+      this.onDestroy();
+  }  onDestroy() {
     this.carousel.removeSlide(this);
   }
 }

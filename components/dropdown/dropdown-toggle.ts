@@ -18,7 +18,9 @@ export class DropdownToggle implements OnInit {
 
   constructor(@Host() public dropdown:Dropdown, public el:ElementRef) {
   }
-
+  ngOnInit() {
+      this.onInit();
+  }
   onInit() {
     this.dropdown.dropDownToggle = this;
   }

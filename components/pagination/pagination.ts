@@ -167,7 +167,9 @@ export class Pagination implements ControlValueAccessor, OnInit, IPaginationConf
     cd.valueAccessor = this;
     this.config = this.config || paginationConfig;
   }
-
+  ngOnInit() {
+      this.onInit();
+  }
   onInit() {
     this.classMap = this.elementRef.nativeElement.getAttribute('class') || '';
     // watch for maxSize

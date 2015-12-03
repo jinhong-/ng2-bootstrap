@@ -47,6 +47,10 @@ export class Tabset implements OnInit {
   constructor() {
   }
 
+  ngOnInit() {
+      this.onInit();
+  }
+
   onInit() {
     this.type = this.type !== 'undefined' ? this.type : 'tabs';
   }
@@ -129,12 +133,20 @@ export class Tab implements OnInit, OnDestroy, DoCheck {
       }
     });
   }
-
+  ngDoCheck() {
+      this.doCheck();
+  }
   doCheck():boolean {
     return true;
   }
-
+  ngOnInit() {
+      this.onInit();
+  }
   onInit() {
+  }
+
+  ngOnDestroy() {
+      this.onDestroy();
   }
 
   onDestroy() {

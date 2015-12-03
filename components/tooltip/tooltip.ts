@@ -106,6 +106,10 @@ export class Tooltip implements OnInit {
               public loader:DynamicComponentLoader) {
   }
 
+  ngOnInit() {
+      this.onInit();
+  }
+
   onInit() {
   }
 

@@ -46,7 +46,9 @@ export class Rating implements ControlValueAccessor, OnInit {
   constructor(@Self() public cd:NgModel) {
     cd.valueAccessor = this;
   }
-
+  ngOnInit() {
+      this.onInit();
+  }
   onInit() {
     this.max = typeof this.max !== 'undefined' ? this.max : 5;
     this.readonly = this.readonly === true;
